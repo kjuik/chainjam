@@ -65,6 +65,7 @@ public class ChainJam : MonoBehaviour {
 	public enum BUTTON {LEFT,RIGHT,UP,DOWN,A,B};
 	
 	// Private vars
+	private static int SCORE_LIMIT = 2;
 	private static int _player1Points = 0;
 	private static int _player2Points = 0;
 	private static int _player3Points = 0;
@@ -248,16 +249,73 @@ public class ChainJam : MonoBehaviour {
 		switch (player)
 		{
 		case PLAYER.PLAYER1:
-			Player1Points += points;
+			if (Player1Points + points <= SCORE_LIMIT)
+				Player1Points += points;
 			break;
 		case PLAYER.PLAYER2:
-			Player2Points += points;
+			if (Player2Points + points <= SCORE_LIMIT)
+				Player2Points += points;
 			break;
 		case PLAYER.PLAYER3:
-			Player3Points += points;
+			if (Player3Points + points <= SCORE_LIMIT)
+				Player3Points += points;
 			break;
 		case PLAYER.PLAYER4:
-			Player4Points += points;
+			if (Player4Points + points <= SCORE_LIMIT)
+				Player4Points += points;
+			break;
+		}
+	}
+	
+	// adds points to a given player
+	public static void AddPointsExcept(PLAYER player, int points)
+	{
+		switch (player)
+		{
+		case PLAYER.PLAYER1:
+			AddPoints(PLAYER.PLAYER2, 1);
+			AddPoints(PLAYER.PLAYER3, 1);
+			AddPoints(PLAYER.PLAYER4, 1);
+			break;
+		case PLAYER.PLAYER2:
+			AddPoints(PLAYER.PLAYER1, 1);
+			AddPoints(PLAYER.PLAYER3, 1);
+			AddPoints(PLAYER.PLAYER4, 1);
+			break;
+		case PLAYER.PLAYER3:
+			AddPoints(PLAYER.PLAYER1, 1);
+			AddPoints(PLAYER.PLAYER2, 1);
+			AddPoints(PLAYER.PLAYER4, 1);
+			break;
+		case PLAYER.PLAYER4:
+			AddPoints(PLAYER.PLAYER1, 1);
+			AddPoints(PLAYER.PLAYER2, 1);
+			AddPoints(PLAYER.PLAYER3, 1);
+			break;
+		}
+	}
+	
+	// adds points to a given player
+	public static void ResetPoints(PLAYER player)
+	{
+		
+		switch (player)
+		{
+		case PLAYER.PLAYER1:
+			Player1Points = 0;
+			AddPointsExcept(PLAYER.PLAYER1, 1);
+			break;
+		case PLAYER.PLAYER2:
+			Player2Points = 0;
+			AddPointsExcept(PLAYER.PLAYER2, 1);
+			break;
+		case PLAYER.PLAYER3:
+			Player3Points = 0;
+			AddPointsExcept(PLAYER.PLAYER3, 1);
+			break;
+		case PLAYER.PLAYER4:
+			Player4Points = 0;
+			AddPointsExcept(PLAYER.PLAYER4, 1);
 			break;
 		}
 	}
