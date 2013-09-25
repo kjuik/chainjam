@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DA49B784-B34F-44D2-8131-A744B66AA352}</ProjectGuid>
+	<ProjectGuid>{BFAE7B6D-74C0-AB17-78D4-985D298B93FA}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\BlockScripts\Scale.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Spin.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Trampoline.cs" />
+     <Compile Include="Assets\Scripts\Game\BlockSpawner.cs" />
      <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Game\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
