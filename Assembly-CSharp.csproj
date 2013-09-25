@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\BlockScripts\Spin.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Trampoline.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\CameraPositioner.cs" />
+     <Compile Include="Assets\Scripts\CameraScripts\PlayerKiller.cs" />
      <Compile Include="Assets\Scripts\Game\BlockSpawner.cs" />
      <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Game\SpawnPoint.cs" />

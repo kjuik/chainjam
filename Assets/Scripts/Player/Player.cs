@@ -120,6 +120,9 @@ public class Player : MonoBehaviour {
 				ChainJam.AddPoints(squishedBy.playerID,1	);
 				if(ChainJam.GetTotalPoints() >= 10) ChainJam.GameEnd();
 			}
+			
+			
+			ChainJam.ResetPoints(playerID);
 
 			SoundManager.i.Play(SoundManager.i.Squish);
 			squished =true;

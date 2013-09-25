@@ -39,14 +39,25 @@ public class SpawnPoint : MonoBehaviour {
 			Collider[] colliders = Physics.OverlapSphere(spawnPoints[i].transform.position,1);
 			bool playerInside = false;
 			
+			
+			
 			// Now we are checking the tags of the colliders, to see if there's a player
 			foreach (Collider collider in colliders) {
-				if(collider.tag == "Player")
-				{
-					// If there's a player, just forget about this spawn...
+				
+				// Outside screen -> dont use
+				if (collider.transform.position.y < Camera.current.transform.position.y || 
+					collider.transform.position.y > Camera.current.transform.position.y + 5){
 					playerInside = true;
 					break;
 				}
+				
+				if(collider.tag == "Player")
+				{
+					// If there's a player, just forget about this spawn...
+					//playerInside = true;
+					//break;
+				}
+				
 			}
 			
 			// If no player was found
