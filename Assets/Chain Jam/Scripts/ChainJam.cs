@@ -133,11 +133,12 @@ public class ChainJam : MonoBehaviour {
 		KeyCode key = KeyCode.Space;
 		switch(player)
 		{
+			//Changed the BUTTON A for all players
 		case PLAYER.PLAYER1:
 			switch(button)
 			{
 			case BUTTON.A:
-				key = KeyCode.Z;
+				key = KeyCode.UpArrow;
 				break;
 			case BUTTON.B:
 				key = KeyCode.X;
@@ -160,7 +161,7 @@ public class ChainJam : MonoBehaviour {
 			switch(button)
 			{
 			case BUTTON.A:
-				key = KeyCode.N;
+				key = KeyCode.I;
 				break;
 			case BUTTON.B:
 				key = KeyCode.M;
@@ -183,7 +184,7 @@ public class ChainJam : MonoBehaviour {
 			switch(button)
 			{
 			case BUTTON.A:
-				key = KeyCode.Q;
+				key = KeyCode.W;
 				break;
 			case BUTTON.B:
 				key = KeyCode.E;
@@ -206,7 +207,7 @@ public class ChainJam : MonoBehaviour {
 			switch(button)
 			{
 			case BUTTON.A:
-				key = KeyCode.R;
+				key = KeyCode.T;
 				break;
 			case BUTTON.B:
 				key = KeyCode.Y;

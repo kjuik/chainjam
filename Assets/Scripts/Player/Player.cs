@@ -137,7 +137,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	IEnumerator Respawn() {
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		
 		iTween.ScaleTo(gameObject,iTween.Hash("scale",startScale,"time", 0.2f,"easeType", "linear"));
 		squished = false;
