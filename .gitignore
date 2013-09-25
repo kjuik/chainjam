@@ -25,6 +25,8 @@ local.properties
 /Library/cache/
 /Library/previews/
 /Library/ScriptAssemblies
+/Library/expandedItems/
+/Library/guildmapper/
 /obj
 /Temp
 
