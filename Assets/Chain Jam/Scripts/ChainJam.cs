@@ -65,7 +65,7 @@ public class ChainJam : MonoBehaviour {
 	public enum BUTTON {LEFT,RIGHT,UP,DOWN,A,B};
 	
 	// Private vars
-	private static int SCORE_LIMIT = 2;
+	private static int SCORE_LIMIT = 99999999;
 	private static int _player1Points = 0;
 	private static int _player2Points = 0;
 	private static int _player3Points = 0;

@@ -22,12 +22,31 @@ public class Player : MonoBehaviour {
 	private KeyCode keyLeft;
 	private KeyCode keyRight;	
 	private KeyCode keyUp;
+	
+	private Vector3 lastPosition;
 
 	void Start () {
 		startScale = transform.localScale;
+		lastPosition = transform.position;
 	}
 	
 	void Update() {
+		
+		Vector3 currentPosition = transform.position;
+		
+		// Moving up
+		/*
+		if (playerID == ChainJam.PLAYER.PLAYER1)
+			Debug.Log("last: " + lastPosition.y + " , now: " + currentPosition.y);
+		*/
+		if (lastPosition.y + 0.05f < currentPosition.y){
+			Debug.Log("yay");
+			this.gameObject.layer = 9;
+		} else {
+			//Debug.Log("no");
+			this.gameObject.layer = 0;
+		}
+		
 		if(!squished)
 		{
 			// Jump and Squish check
@@ -41,14 +60,17 @@ public class Player : MonoBehaviour {
 
 			if(bottomLeft.collider && bottomLeft.collider.tag == "Player")
 			{
+				eject();
 				bottomLeft.collider.transform.GetComponent<Player>().Squish(this);
 			}
 			if(bottomMiddle.collider && bottomMiddle.collider.tag == "Player")
 			{
+				eject();
 				bottomMiddle.collider.transform.GetComponent<Player>().Squish(this);
 			}
 			if(bottomRight.collider && bottomRight.collider.tag == "Player")
 			{
+				eject();
 				bottomRight.collider.transform.GetComponent<Player>().Squish(this);
 			}
 			
@@ -79,6 +101,8 @@ public class Player : MonoBehaviour {
 				rigidbody.velocity = (new Vector3(rigidbody.velocity.x, rigidbody.velocity.y / 2,0));
 			}
 		}
+		
+		lastPosition = currentPosition;
 	}
 		
 	
@@ -117,7 +141,7 @@ public class Player : MonoBehaviour {
 		{
 			if(squishedBy)
 			{
-				ChainJam.AddPoints(squishedBy.playerID,1	);
+				//ChainJam.AddPoints(squishedBy.playerID,1	);
 				if(ChainJam.GetTotalPoints() >= 10) ChainJam.GameEnd();
 			}
 			
@@ -137,6 +161,12 @@ public class Player : MonoBehaviour {
 				"easeType", "linear"));
 			StartCoroutine(Respawn());
 		}
+	}
+	
+	void eject(){
+	
+		rigidbody.velocity = (new Vector3(0, jumpStrength * 1.3f * jumpStrengthMultiplier,0));
+		
 	}
 	
 	IEnumerator Respawn() {
