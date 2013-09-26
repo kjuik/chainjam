@@ -38,14 +38,14 @@ public class Player : MonoBehaviour {
 		/*
 		if (playerID == ChainJam.PLAYER.PLAYER1)
 			Debug.Log("last: " + lastPosition.y + " , now: " + currentPosition.y);
-		*/
+		
 		if (lastPosition.y + 0.05f < currentPosition.y){
 			Debug.Log("yay");
 			this.gameObject.layer = 9;
 		} else {
 			//Debug.Log("no");
 			this.gameObject.layer = 0;
-		}
+		}*/
 		
 		if(!squished)
 		{
@@ -194,5 +194,14 @@ public class Player : MonoBehaviour {
 		transform.position = SpawnPoint.GetRandomSpawnpoint().position;
 	}
 	
+	/*void OnTriggerEnter(Collider other){
+		
+		if (other.tag == "SpawnPoint"){
+			if (other.transform.position.y > this.transform.position.y)
+				Physics.IgnoreCollision(this.collider,other,true);
+			else 
+				Physics.IgnoreCollision(this.collider,other,false);
+		}
+	}*/
 
 }

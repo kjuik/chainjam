@@ -37,15 +37,16 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity4.2/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity4.2/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Chain Jam\Plugins\iTween.cs" />
      <Compile Include="Assets\Chain Jam\Scripts\ChainJam.cs" />
+     <Compile Include="Assets\Scripts\BlockScripts\JumpThrough.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Lava.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Move.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Scale.cs" />
