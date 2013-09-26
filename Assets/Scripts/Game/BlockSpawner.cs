@@ -47,6 +47,7 @@ public class BlockSpawner : MonoBehaviour {
 		}
 		
 		Transform instance = (Transform) Instantiate(platform, new Vector3(x, y, 0), Quaternion.identity);
+		
 		Transform instance2 = (Transform) Instantiate(platform, new Vector3(x2, y, 0), Quaternion.identity);
 		
 		Vector3 scale = instance.transform.localScale;
