@@ -151,7 +151,7 @@ public class Player : MonoBehaviour {
 			
 			ChainJam.ResetPoints(playerID);
 
-			SoundManager.i.Play(SoundManager.i.Squish);
+			SoundManager.i.Play(SoundManager.i.Boom);
 			squished =true;
 			
 			/*iTween.ScaleTo(gameObject,iTween.Hash(

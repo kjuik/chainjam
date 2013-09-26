@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour {
 												//... but we need it like this so we can have them in the inspector
 	public AudioClip Jump;
 	public AudioClip Squish;
+	public AudioClip Boom;
 	public AudioClip Respawn;			// Just add more sounds here, and you'll be able to use them anywhere in the code by doing
 												// SoundManager.i.Play(SoundManager.i.MySound);	
 	void Awake () {
@@ -15,7 +16,7 @@ public class SoundManager : MonoBehaviour {
 	
 	public void Play(AudioClip clip) 
 	{
-		audio.PlayOneShot(clip);		
+		audio.PlayOneShot(clip);
 	}
 	
 }
