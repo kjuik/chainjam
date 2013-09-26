@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\CameraScripts\PlayerKiller.cs" />
      <Compile Include="Assets\Scripts\Game\BlockSpawner.cs" />
      <Compile Include="Assets\Scripts\Game\DeathsCounter.cs" />
+     <Compile Include="Assets\Scripts\Game\GameEnder.cs" />
      <Compile Include="Assets\Scripts\Game\LaserShooter.cs" />
      <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Game\SpawnPoint.cs" />

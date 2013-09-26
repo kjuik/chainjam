@@ -49,7 +49,7 @@ public class DeathsCounter : MonoBehaviour {
 				"x",finalPlaces[nextPlaceNo].transform.position.x,
 				"y",finalPlaces[nextPlaceNo].transform.position.y, 
 				"z",finalPlaces[nextPlaceNo].transform.position.z,
-				"time",0.5f,
+				"time",0.03f,
 				"easeType", "easeOutSine"));
 		
 		nextPlaceNo++;
