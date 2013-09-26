@@ -4,6 +4,7 @@ using System.Collections;
 public class BlockSpawner : MonoBehaviour {
 	
 	public Transform platform;
+	public Transform mine;
 	
 	public int blocks = 100;
 	public int distance = 3;
@@ -25,7 +26,7 @@ public class BlockSpawner : MonoBehaviour {
 			
 			Debug.Log("spread: " + spread + ", progress: " + progress + " , width: " + width);
 			
-			SpawnBlock(i * distance + 0.5f, width + 0.0f);
+			SpawnBlock(i * distance + 0.5f, width + 0.0f,i%5==0);
 			
 		}
 		
@@ -36,10 +37,14 @@ public class BlockSpawner : MonoBehaviour {
 	
 	}
 	
-	void SpawnBlock(float y, float width){
+	void SpawnBlock(float y, float width, bool mineActual){
 	//Jannick tries to make two platforms the funky way
 		float x = Random.Range(minX, maxX);
 		float x2 = Random.Range(minX, maxX);
+		
+		if(mineActual){
+			Transform mines = (Transform) Instantiate(mine, new Vector3(x, y+1, 0), Quaternion.identity);
+		}
 		
 		Transform instance = (Transform) Instantiate(platform, new Vector3(x, y, 0), Quaternion.identity);
 		Transform instance2 = (Transform) Instantiate(platform, new Vector3(x2, y, 0), Quaternion.identity);
@@ -52,6 +57,7 @@ public class BlockSpawner : MonoBehaviour {
 		
 		instance.transform.localScale = scale;
 		instance2.transform.localScale = scale2;
+		
 		
 	}
 	

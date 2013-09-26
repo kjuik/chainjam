@@ -9,6 +9,13 @@ public class Lava : MonoBehaviour {
 		if(collision.rigidbody.tag == "Player")
 		{
 			collision.rigidbody.GetComponent<Player>().Squish();
+			
+			if(tag=="Mine"){
+				GameObject.Destroy(gameObject);
+			}
+			
 		}
+		
+		
     }
 }
