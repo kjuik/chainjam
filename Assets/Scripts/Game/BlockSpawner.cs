@@ -10,8 +10,8 @@ public class BlockSpawner : MonoBehaviour {
 	public int distance = 3;
 	public int maxSize = 4;
 	public int minSize = 1;
-	public int minX = -25;
-	public int maxX = 25;
+	public int minX = -23;
+	public int maxX = 23;
 	public int height = 1;
 	
 	// Use this for initialization
@@ -26,7 +26,7 @@ public class BlockSpawner : MonoBehaviour {
 			
 			Debug.Log("spread: " + spread + ", progress: " + progress + " , width: " + width);
 			
-			SpawnBlock(i * distance + 0.5f, width + 0.0f,i%5==0);
+			SpawnBlock(i * distance + 0.5f, width + 0.0f,i%2==0);
 			
 		}
 		
