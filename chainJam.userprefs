@@ -1,14 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\SoundManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\BlockSpawner.cs">
     <Files>
-      <File FileName="Assets\Scripts\Game\SpawnPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="154" Column="43" />
-      <File FileName="Assets\Scripts\BlockScripts\Move.cs" Line="1" Column="1" />
-      <File FileName="Assets\Chain Jam\Scripts\ChainJam.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraScripts\PlayerKiller.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game\BlockSpawner.cs" Line="11" Column="25" />
-      <File FileName="Assets\Scripts\Game\SoundManager.cs" Line="13" Column="17" />
+      <File FileName="Assets\Scripts\Game\BlockSpawner.cs" Line="49" Column="3" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="42" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

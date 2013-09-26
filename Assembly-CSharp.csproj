@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity4.2/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity4.2/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\CameraScripts\CameraPositioner.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\PlayerKiller.cs" />
      <Compile Include="Assets\Scripts\Game\BlockSpawner.cs" />
+     <Compile Include="Assets\Scripts\Game\LaserShooter.cs" />
      <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Game\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
