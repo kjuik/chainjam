@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BlockScripts\JumpThrough.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\GameEnder.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="39" Column="43" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="188" Column="1" />
       <File FileName="Assets\Scripts\BlockScripts\JumpThrough.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\Game\SpawnPoint.cs" Line="13" Column="31" />
+      <File FileName="Assets\Scripts\Game\DeathsCounter.cs" Line="48" Column="61" />
+      <File FileName="Assets\Scripts\Game\GameEnder.cs" Line="12" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
