@@ -35,6 +35,7 @@ public class ScreenShake : MonoBehaviour {
 		} else {
 				
 			shake = 0.0f;
+			pos = transform.localPosition;
 	
 		}
 	

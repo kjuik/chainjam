@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity4.2/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity4.2/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BlockScripts\JumpThrough.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Lava.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Move.cs" />
+     <Compile Include="Assets\Scripts\BlockScripts\Saw.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Scale.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Spin.cs" />
      <Compile Include="Assets\Scripts\BlockScripts\Trampoline.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\Scripts\Game\DeathsCounter.cs" />
      <Compile Include="Assets\Scripts\Game\GameEnder.cs" />
      <Compile Include="Assets\Scripts\Game\LaserShooter.cs" />
+     <Compile Include="Assets\Scripts\Game\SawSpawner.cs" />
      <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Game\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
