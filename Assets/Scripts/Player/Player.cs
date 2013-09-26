@@ -157,8 +157,6 @@ public class Player : MonoBehaviour {
 				s.Shake();
 			}
 			
-			ChainJam.ResetPoints(playerID);
-
 			SoundManager.i.Play(SoundManager.i.Boom);
 			squished = true;
 			
