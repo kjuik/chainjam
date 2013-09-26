@@ -32,20 +32,21 @@ public class Player : MonoBehaviour {
 	
 	void Update() {
 		
+		
 		Vector3 currentPosition = transform.position;
 		
 		// Moving up
 		/*
 		if (playerID == ChainJam.PLAYER.PLAYER1)
 			Debug.Log("last: " + lastPosition.y + " , now: " + currentPosition.y);
-		
+		*/
 		if (lastPosition.y + 0.05f < currentPosition.y){
 			Debug.Log("yay");
 			this.gameObject.layer = 9;
 		} else {
 			//Debug.Log("no");
 			this.gameObject.layer = 0;
-		}*/
+		}
 		
 		if(!squished)
 		{
@@ -148,11 +149,15 @@ public class Player : MonoBehaviour {
 				if(ChainJam.GetTotalPoints() >= 10) ChainJam.GameEnd();
 			}
 			
+			if (Camera.current != null){
+				ScreenShake s = Camera.current.GetComponent<ScreenShake>();
+				s.Shake();
+			}
 			
 			ChainJam.ResetPoints(playerID);
 
 			SoundManager.i.Play(SoundManager.i.Boom);
-			squished =true;
+			squished = true;
 			
 			/*iTween.ScaleTo(gameObject,iTween.Hash(
 				"y",0.1f, 
@@ -191,17 +196,8 @@ public class Player : MonoBehaviour {
 		squished = false;
 		SoundManager.i.Play(SoundManager.i.Respawn);
 		
-		transform.position = SpawnPoint.GetRandomSpawnpoint().position + Vector3.up * 1.2f;
+		transform.position = SpawnPoint.GetRandomSpawnpoint().position;
 	}
 	
-	/*void OnTriggerEnter(Collider other){
-		
-		if (other.tag == "SpawnPoint"){
-			if (other.transform.position.y > this.transform.position.y)
-				Physics.IgnoreCollision(this.collider,other,true);
-			else 
-				Physics.IgnoreCollision(this.collider,other,false);
-		}
-	}*/
 
 }
