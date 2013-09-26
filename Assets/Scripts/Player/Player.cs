@@ -196,7 +196,7 @@ public class Player : MonoBehaviour {
 		squished = false;
 		SoundManager.i.Play(SoundManager.i.Respawn);
 		
-		transform.position = SpawnPoint.GetRandomSpawnpoint().position;
+		transform.position = SpawnPoint.GetRandomSpawnpoint().position+Vector3.up*1.2f;
 	}
 	
 
