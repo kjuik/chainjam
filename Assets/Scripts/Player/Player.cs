@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 	
 	private float lockLeft;								// Don't allow left movement
 	private float lockRight;							// ... or right movement
-	private Vector3  startScale;						// Remember the start scale, for the squishing animation
+	//private Vector3  startScale;						// Remember the start scale, for the squishing animation
 	private bool squished;								// Are we alive or what?
 	
 	private KeyCode keyLeft;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 	private Vector3 lastPosition;
 
 	void Start () {
-		startScale = transform.localScale;
+		//startScale = transform.localScale;
 		lastPosition = transform.position;
 	}
 	
@@ -153,7 +153,8 @@ public class Player : MonoBehaviour {
 
 			SoundManager.i.Play(SoundManager.i.Squish);
 			squished =true;
-			iTween.ScaleTo(gameObject,iTween.Hash(
+			
+			/*iTween.ScaleTo(gameObject,iTween.Hash(
 				"y",0.1f, 
 				"x",1.3f,
 				"time",0.2f,
@@ -161,7 +162,13 @@ public class Player : MonoBehaviour {
 			iTween.MoveTo(gameObject,iTween.Hash(
 				"y",transform.position.y - 0.4f,
 				"time",0.2f,
-				"easeType", "linear"));
+				"easeType", "linear"));*/
+			
+			this.renderer.enabled = false;
+			gravity = 0;
+			rigidbody.isKinematic = true;
+			GetComponentInChildren<ParticleSystem>().Play();
+			
 			StartCoroutine(Respawn());
 		}
 	}
@@ -175,7 +182,10 @@ public class Player : MonoBehaviour {
 	IEnumerator Respawn() {
 		yield return new WaitForSeconds(1);
 		
-		iTween.ScaleTo(gameObject,iTween.Hash("scale",startScale,"time", 0.2f,"easeType", "linear"));
+		this.renderer.enabled = true;
+		gravity = -80;
+		rigidbody.isKinematic = false;
+		
 		squished = false;
 		SoundManager.i.Play(SoundManager.i.Respawn);
 		
