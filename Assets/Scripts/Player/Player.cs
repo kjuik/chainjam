@@ -24,6 +24,9 @@ public class Player : MonoBehaviour {
 	private KeyCode keyUp;
 	
 	private Vector3 lastPosition;
+	
+	public ParticleSystem explosion;
+	public ParticleSystem respawn;
 
 	void Start () {
 		//startScale = transform.localScale;
@@ -174,7 +177,7 @@ public class Player : MonoBehaviour {
 			this.renderer.enabled = false;
 			gravity = 0;
 			rigidbody.isKinematic = true;
-			GetComponentInChildren<ParticleSystem>().Play();
+			explosion.Play();
 			
 			StartCoroutine(Respawn());
 		}
@@ -197,6 +200,8 @@ public class Player : MonoBehaviour {
 		SoundManager.i.Play(SoundManager.i.Respawn);
 		
 		transform.position = SpawnPoint.GetRandomSpawnpoint().position+Vector3.up*1.2f;
+		
+		respawn.Play();
 	}
 	
 
