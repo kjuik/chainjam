@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip Jump;
 	public AudioClip Squish;
 	public AudioClip Boom;
+	public AudioClip Laser;
 	public AudioClip Background;
 	public AudioClip Respawn;			// Just add more sounds here, and you'll be able to use them anywhere in the code by doing
 												// SoundManager.i.Play(SoundManager.i.MySound);	

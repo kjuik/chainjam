@@ -29,13 +29,16 @@ public class LaserShooter : MonoBehaviour {
 	
 	IEnumerator Shooting(){
 		shoot = true;
-		int r = Random.Range(1,4);
+		int r = Random.Range(0,3);
 		yield return new WaitForSeconds(r);
+		SoundManager.i.Play(SoundManager.i.Laser);
+		yield return new WaitForSeconds(1);
 		List<GameObject> instances = new List<GameObject>();
 		for(int i = 0; i < blocks; i++){
 			instances.Add(((Transform) Instantiate(laserBeam, new Vector3(0, i * distance + 0.5f, 0), Quaternion.identity)).gameObject);
 		}
-		yield return new WaitForSeconds(r);
+		
+		yield return new WaitForSeconds(r+1);
 		
 		foreach(GameObject instance in instances)
 			GameObject.Destroy(instance);
