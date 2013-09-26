@@ -164,6 +164,8 @@ public class Player : MonoBehaviour {
 				"time",0.2f,
 				"easeType", "linear"));*/
 			
+			GameObject.Find("HUD").SendMessage("addDeath",this);
+			
 			this.renderer.enabled = false;
 			gravity = 0;
 			rigidbody.isKinematic = true;
