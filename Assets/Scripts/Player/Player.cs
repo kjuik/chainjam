@@ -61,17 +61,20 @@ public class Player : MonoBehaviour {
 			if(bottomLeft.collider && bottomLeft.collider.tag == "Player")
 			{
 				eject();
-				bottomLeft.collider.transform.GetComponent<Player>().Squish(this);
+				SoundManager.i.Play(SoundManager.i.Jump);
+				//bottomLeft.collider.transform.GetComponent<Player>().Squish(this);
 			}
 			if(bottomMiddle.collider && bottomMiddle.collider.tag == "Player")
 			{
 				eject();
-				bottomMiddle.collider.transform.GetComponent<Player>().Squish(this);
+				SoundManager.i.Play(SoundManager.i.Jump);
+				//bottomMiddle.collider.transform.GetComponent<Player>().Squish(this);
 			}
 			if(bottomRight.collider && bottomRight.collider.tag == "Player")
 			{
 				eject();
-				bottomRight.collider.transform.GetComponent<Player>().Squish(this);
+				SoundManager.i.Play(SoundManager.i.Jump);
+				//bottomRight.collider.transform.GetComponent<Player>().Squish(this);
 			}
 			
 			if(ChainJam.GetButtonJustPressed(playerID,ChainJam.BUTTON.A) || ChainJam.GetButtonJustPressed(playerID,ChainJam.BUTTON.B))
@@ -81,14 +84,14 @@ public class Player : MonoBehaviour {
 					SoundManager.i.Play(SoundManager.i.Jump);
 					Debug.Log("normal jump");
 				}
-				else if(left.collider)
+				else if(left.collider && (!left.collider.CompareTag("Wall")))
 				{
 					rigidbody.velocity = (new Vector3(jumpStrength* jumpStrengthMultiplier*0.3f, jumpStrength * jumpStrengthMultiplier*0.7f,0));
 					SoundManager.i.Play(SoundManager.i.Jump);
 					lockLeft = 0.1f;
 					Debug.Log("side jump left" + jumpStrength + " " + jumpStrengthMultiplier );
 				}
-				else if(right.collider)
+				else if(right.collider && (!right.collider.CompareTag("Wall")))
 				{
 					rigidbody.velocity = (new Vector3(-jumpStrength* jumpStrengthMultiplier*0.3f, jumpStrength* jumpStrengthMultiplier *0.7f,0));
 					SoundManager.i.Play(SoundManager.i.Jump);
